@@ -1,43 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   screenspace.h                                      :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/27 14:57:56 by znichola          #+#    #+#             */
-/*   Updated: 2022/11/27 14:57:56 by znichola         ###   ########.fr       */
+/*   Created: 2022/11/27 17:11:10 by znichola          #+#    #+#             */
+/*   Updated: 2022/11/27 17:11:10 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCREENSPACE_H
-# define SCREENSPACE_H
+#include "screenspace.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-
-typedef struct	s_fpoint
+void	init_app(t_app *a)
 {
-	double	x;
-	double	y;
-}				t_fpoint;
+	a->offset.x = 0.0;
+	a->offset.y = 0.0;
+	a->scale.x = 1;
+	a->scale.y = 1;
+}
 
-typedef struct	s_ipoint
+void	pi(t_ipoint p)
 {
-	int	x;
-	int	y;
-}				t_ipoint;
+	printf("(%d, %d)", p.x, p.y);
+}
 
-typedef struct	s_app
+void	pf(t_fpoint p)
 {
-	t_fpoint	scale;
-	t_fpoint	offset;
-}				t_app;
-
-void	init_app(t_app *a);
-void	pi(t_ipoint p);
-void	pf(t_fpoint p);
-
-
-#endif
+	printf("(%.1f, %.1f)", p.x, p.y);
+}
