@@ -1,0 +1,4 @@
+*.o
+screenspace
+scratch.c
+.vscode
